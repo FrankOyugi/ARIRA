@@ -106,7 +106,7 @@ const Navbar = () => {
                 <input type="number" placeholder='Sq. meters...' name='sqmeters' onChange={handleState}/>
                 <input type="number" placeholder='Baths...' name='baths' step={1} min={2} onChange={handleState}/>
                 
-                <div style={{display: 'flex',alignItems: 'center',gap: '12px',width: '50%'}}>
+                <div style={{display: 'flex',alignItems: 'center',gap: '12px',width: '50%',color: 'black'}}>
                   <label htmlFor='photo'>Property picture <AiOutlineFileImage/> </label>
                   <input 
                     type="file" 

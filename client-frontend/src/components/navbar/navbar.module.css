@@ -115,6 +115,7 @@
     border-radius: 20px;
 }
 
+
 .listPropertyWrapper > h2{
     text-align: center;
     margin: 2.5rem 0;
@@ -128,6 +129,10 @@
     gap: 12px;
     font-size: 18px;
     margin-right: 1rem;
+}
+
+.listPropertyWrapper >form>input::placeholder{
+    color: #000;
 }
 
 .listPropertyWrapper >button{
