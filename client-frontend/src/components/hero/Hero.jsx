@@ -1,13 +1,17 @@
 import React, { useState } from 'react'
 import {AiOutlineSearch} from 'react-icons/ai'
 import classes from './hero.module.css'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
-  const [type, setType] = useState("bedsitter")
+  const [type, setType] = useState("beach")
   const [continent, setContinent] = useState("0")
   const [priceRange, setPriceRange] = useState("0")
+  const navigate = useNavigate()
 
   const handleSearch = () => {
+  //navigate to properties
+  navigate(`/properties?type=${type}&continent=${continent}&priceRange=${priceRange}`)
 
   }
 
@@ -15,32 +19,31 @@ const Hero = () => {
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <h2>Let me find your dream place right now</h2>
-        <h5>Search the best selection of luxury real estate in Nairobi</h5>
+        <h5>Search the best selection of luxury real estate</h5>
         <div className={classes.options}>
           <select onChange={(e) => setType(e.target.value)}>
             <option disabled>Select type</option>
-            <option value="bedsitter">Bedsitter</option>
-            <option value="onebedroom">One Bedroom</option>
-            <option value="twobedroom">Two Bedroom</option>
-            <option value="threebedroom">Three Bedroom</option>
-            <option value="fourbedroom">Four Bedroom</option>
-            <option value="fivebedroomplus">Five Bedroom +</option>
+            <option value="beach">Beach</option>
+            <option value="mountain">Mountain</option>
+            <option value="village">Village</option>
           </select>
           <select onChange={(e) => setPriceRange(e.target.value)}>
             <option disabled>Select Price Range</option>
-            <option value="0">0-10,000</option>
-            <option value="1">10,000-40,000</option>
-            <option value="2">40,000-70,000</option>
-            <option value="3">70,000-150,000</option>
-            <option value="4">160,000-300,000</option>
+            <option value="0">0-100,000</option>
+            <option value="1">100,000-200,000</option>
+            <option value="2">200,000-300,000</option>
+            <option value="3">300,000-400,000</option>
+            <option value="4">400,000-500,000</option>
           </select>
           <select onChange={(e) => setContinent(e.target.value)}>
-            <option disabled>Select Furnishing preference</option>
-            <option value="0">Furnished </option>
-            <option value="0">Unfurnished</option>
-            <option value="0">Either</option>
+            <option disabled>Select Continent</option>
+            <option value="0">Europe</option>
+            <option value="1">Asia</option>
+            <option value="2">Africa</option>
+            <option value="3">South America</option>
+            <option value="4">North America</option>
           </select>
-          <AiOutlineSearch className={classes.searchIcon}/>
+          <AiOutlineSearch onClick={handleSearch} className={classes.searchIcon}/>
         </div>
       </div>
 

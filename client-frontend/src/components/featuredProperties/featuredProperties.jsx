@@ -3,7 +3,7 @@ import classes from './featuredProperties.module.css'
 import { request } from '../../util/fetchAPI'
 import img from '../../assets/estate3.jpg'
 import person from '../../assets/person.jpg'
-import { FaBed, FaMapMarkerAlt, FaSquareFull} from 'react-icons/fa'
+import {FaBed, FaSquareFull} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 
 
@@ -34,18 +34,17 @@ const FeaturedProperties = () => {
         <div className={classes.featuredProperties}>
             {featuredProperties?.map((property) => (
               <div key={property._id} className={classes.featuredProperty}>
-                  <Link to={' /propertyDetail/${property._id}'} className={classes.imgContainer}>
-                    <img src={img} alt=""/>
+                  <Link to={`/propertyDetail/${property._id}`} className={classes.imgContainer}>
+                    <img src={property.img ? `http://localhost:3005/images/${property.img}` : img} alt=""/>
                   </Link>
                   <div className={classes.details}>
                     <div className={classes.priceAndOwner}>
-                      <span className={classes.price}>ksh {property?.price}</span>
+                      <span className={classes.price}>$ {property?.price}</span>
                       <img src={person} className={classes.owner}/>
                        </div>
                        <div className={classes.moreDetails}>
-                         <span>{property?.type} <FaBed className={classes.icon}/></span>
-                         <span>{property?.sqmeters} squaremeters <FaSquareFull className={classes.icon}/></span>
-                         <span>{property?.location} <FaMapMarkerAlt className={classes.icon}/></span>
+                         <span>{property?.beds} beds <FaBed className={classes.icon}/></span>
+                         <span>{property?.beds} squaremeters <FaSquareFull className={classes.icon}/></span>
                        </div>
                        <div className={classes.desc}>
                         {property?.desc}

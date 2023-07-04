@@ -6,19 +6,20 @@ const Footer = () => {
     <footer>
       <div className={classes.wrapper}>
         <div className={classes.col}>
-          <h2>About the wep application</h2>
-          <p>Apex House Rentals is a web application that has been developed to connect tenants and real estate agents.This website can be used to either look for a rental property,or advertise a rental property.</p>
+          <h2>About the app</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis, repellat. Voluptates, vero. Assumenda excepturi quisquam, soluta hic iure iste doloribus provident adipisci, quo sequi accusantium minima, sint dicta exercitationem voluptates!</p>
         </div>
         <div className={classes.col}>
           <h2>Contacts</h2>
-          <span>Phone: +254700505050</span>
-          <span>Youtube: Apex House Rentals</span>
-          <span>Twitter: Apex House Rentals</span>
+          <span>Phone: +123456789</span>
+          <span>Youtube: WebDevMania</span>
+          <span>GitHub: WebDevMania</span>
         </div>
         <div className={classes.col}>
           <h2>Location</h2>
-          <span>Country:Kenya</span>
-          <span>City:Nairobi</span>
+          <span>Continent:Europe</span>
+          <span>Country:Bulgaria</span>
+          <span>Current Location:Bulgaria</span>
         </div>
       </div>
     </footer>
