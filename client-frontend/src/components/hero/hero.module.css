@@ -55,6 +55,36 @@
     cursor: pointer;
 }
 
+.wrapper > .options >.searchBar{
+  display: flex;
+  border-radius: 10px;
+  align-items: flex-start;
+  height: 40px;
+  border: 2px solid blue;
+  width: 220px;
+  background-color: blue;
+  padding: 0;
+}
+
+.wrapper > .options >.searchBar > input{
+  text-decoration: none;
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  color: #efefef;
+  width: 100%;
+  font-weight: normal;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+::placeholder{
+  color: #efefef;
+  text-decoration: none;
+  font-weight: normal;
+}
+
 .options > .searchIcon{
     padding: 0.6rem;
     width: 40px;
