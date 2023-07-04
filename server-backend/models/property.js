@@ -13,7 +13,7 @@ const PropertySchema = new mongoose.Schema({
     },
     type: {
         type: String,
-        enum: ["beach", "mountain", "village"],
+        enum: ["bedsitter", "onebedroom", "twobedroom", "threebedroom", "fourbedroom", "fivebedroomplus"],
         required: true,
     },
     desc: {
@@ -33,11 +33,11 @@ const PropertySchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    continent: {
+    location: {
         type: String,
         required: true,
     },
-    beds: {
+    baths: {
         type: Number,
         required: true,
         min: 2,
@@ -49,4 +49,5 @@ const PropertySchema = new mongoose.Schema({
 }, {timestamps: true})
 
 module.exports = mongoose.model("Property", PropertySchema)
+
 

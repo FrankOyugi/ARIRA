@@ -126,7 +126,7 @@
     border: none;
 }
 
-.typeAndContinent {
+.typeAndLocation {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +134,7 @@
     margin-bottom: 2rem;
 }
 
-.typeAndContinent>div>span {
+.typeAndLocation>div>span {
     background-color: #2500ac;
     color: #fff;
     padding: 0.4rem 1rem;

@@ -3,7 +3,7 @@ import classes from './featuredProperties.module.css'
 import { request } from '../../util/fetchAPI'
 import img from '../../assets/estate3.jpg'
 import person from '../../assets/person.jpg'
-import {FaBed, FaSquareFull} from 'react-icons/fa'
+import {FaBath, FaSquareFull} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
 
 
@@ -39,12 +39,12 @@ const FeaturedProperties = () => {
                   </Link>
                   <div className={classes.details}>
                     <div className={classes.priceAndOwner}>
-                      <span className={classes.price}>$ {property?.price}</span>
-                      <img src={person} className={classes.owner}/>
+                      <span className={classes.price}>ksh {property?.price}</span>
+                      <img src={person} className={classes.owner} alt=""/>
                        </div>
                        <div className={classes.moreDetails}>
-                         <span>{property?.beds} beds <FaBed className={classes.icon}/></span>
-                         <span>{property?.beds} squaremeters <FaSquareFull className={classes.icon}/></span>
+                         <span>{property?.baths} baths <FaBath className={classes.icon}/></span>
+                         <span>{property?.sqmeters} squaremeters <FaSquareFull className={classes.icon}/></span>
                        </div>
                        <div className={classes.desc}>
                         {property?.desc}

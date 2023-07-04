@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import { request } from '../../util/fetchAPI'
 import { useParams } from 'react-router-dom'
 import { AiOutlineClose } from 'react-icons/ai'
-import { FaBed, FaSquareFull } from 'react-icons/fa'
+import { FaBath, FaSquareFull } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
 
 
@@ -54,25 +54,25 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <div className={classes.left}>
-          <img src={`http://localhost:3005/images/${propertyDetail?.img}`} />
+          <img src={`http://localhost:3005/images/${propertyDetail?.img}`} alt="" />
         </div>
         <div className={classes.right}>
           <h3 className={classes.title}>
             Title: {`${propertyDetail?.title}`}
           </h3>
           <div className={classes.details}>
-            <div className={classes.typeAndContinent}>
+            <div className={classes.typeAndLocation}>
               <div>Type: <span>{`${propertyDetail?.type}`}</span></div>
-              <div>Continent: <span>{`${propertyDetail?.continent}`}</span></div>
+              <div>Location: <span>{`${propertyDetail?.location}`}</span></div>
             </div>
             <div className={classes.priceAndOwner}>
               <span className={classes.price}><span>Price: $</span>{`${propertyDetail?.price}`}</span>
               <span style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
-                Owner <img src={`http://localhost:3005/images/${propertyDetail?.currentOwner?.profileImg}`} className={classes.owner}/>
+                Owner <img src={`http://localhost:3005/images/${propertyDetail?.currentOwner?.profileImg}`} className={classes.owner} alt=""/>
               </span>
             </div>
             <div className={classes.moreDetails}>
-              <span>{propertyDetail?.beds} <FaBed className={classes.icon}/></span>
+              <span>{propertyDetail?.baths} <FaBath className={classes.icon}/></span>
               <span>{propertyDetail?.sqmeters} <FaSquareFull className={classes.icon}/></span>
             </div>
           </div>

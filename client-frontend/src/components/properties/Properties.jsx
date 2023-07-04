@@ -3,7 +3,6 @@ import classes from './properties.module.css'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { request } from '../../util/fetchAPI'
 import { arrPriceRanges } from '../../util/idxToPriceRange'
-import { continentToIdx, idxToContinent } from '../../util/idxToContinent'
 import person from '../../assets/person.jpg'
 import {FaBed, FaSquareFull} from 'react-icons/fa'
 import {AiOutlineSearch} from 'react-icons/ai'
@@ -65,16 +64,14 @@ const Properties = () => {
       }
 
       const filteredProperties = allProperties.filter((property) => {
-        //options.priceRange === 1 arrPriceRanges[1] =>second element => "100000-200000"
+        //options.priceRange === 1 arrPriceRanges[1] =>second element => "10000-40000"
         const priceRange = arrPriceRanges[options.priceRange]
         const minPrice  = Number(priceRange.split('-')[0])
         const maxPrice  = Number(priceRange.split('-')[1])
-        const continent = continentToIdx(property.continent)
         
 
         if(
             property.type === options.type
-            && continent === Number(options.continent)
             && property.price >= minPrice && property.price <= maxPrice
         ) {
             return property
@@ -82,7 +79,7 @@ const Properties = () => {
 
       })
 
-      const queryStr = `type=${options.type}&continent=${options.continent}&priceRange=${options.priceRange}`
+      const queryStr = `type=${options.type}&priceRange=${options.priceRange}`
 
       navigate(`/properties?${queryStr}`, {replace: true})
       setFilteredProperties(filteredProperties)
@@ -94,25 +91,20 @@ const Properties = () => {
                 <div className={classes.options}>
                  <select value={state?.type} name = "type" onChange={handleState}>
                   <option disabled>Select type</option>
-                  <option value="beach">Beach</option>
-                  <option value="mountain">Mountain</option>
-                  <option value="village">Village</option>
+                  <option value="bedsitter">Bedsitter</option>
+                  <option value="onebedroom">One Bedroom</option>
+                  <option value="twobedroom">Two Bedroom</option>
+                  <option value="threebedroom">Three Bedroom</option>
+                  <option value="fourbedroom">Four Bedroom</option>
+                  <option value="fivebedroomplus">Five Bedroom +</option>
                  </select>
                  <select value={state?.priceRange} name = "priceRange" onChange={handleState}>
                   <option disabled>Select Price Range</option>
-                  <option value="0">0-100,000</option>
-                  <option value="1">100,000-200,000</option>
-                  <option value="2">200,000-300,000</option>
-                  <option value="3">300,000-400,000</option>
-                  <option value="4">400,000-500,000</option>
-                 </select>
-                 <select value={state?.continent} name = "continent" onChange={handleState}>
-                  <option disabled>Select Continent</option>
-                  <option value="0">Europe</option>
-                  <option value="1">Asia</option>
-                  <option value="2">Africa</option>
-                  <option value="3">South America</option>
-                  <option value="4">North America</option>
+                  <option value="0">0-10,000</option>
+                  <option value="1">10,000-40,000</option>
+                  <option value="2">40,000-75,000</option>
+                  <option value="3">75,000-120,000</option>
+                  <option value="4">120,000-500,000</option>
                  </select>
                  <button className={classes.searchBtn}>
                    <AiOutlineSearch onClick={handleSearch} className={classes.searchIcon}/>
@@ -122,7 +114,7 @@ const Properties = () => {
                     <>
                     <div className={classes.titles}>
                         <h5>Selected properties</h5>
-                        <h2>Properrty you may like</h2>
+                        <h2>Property you may like</h2>
                     </div>
                     <div className={classes.properties}>
                         {filteredProperties.map((property) => (
@@ -133,7 +125,7 @@ const Properties = () => {
                                 <div className={classes.details}>
                                     <div className={classes.priceAndOwner}>
                                         <span className={classes.price}>$ {property.price}</span>
-                                        <img src={person} className={classes.owner}/>
+                                        <img src={person} className={classes.owner} alt=""/>
                                     </div>
                                     <div className={classes.moredetails}>
                                         <span>{property.beds} <FaBed classname={classes.icon}/></span>

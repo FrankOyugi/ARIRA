@@ -52,7 +52,7 @@ const Navbar = () => {
 
     try {
       const options = {
-        'Authorization': 'Bearer \\' + {token},
+        'Authorization': `Bearer${token}`,
         'Content-Type': 'application/json'
       }
 
@@ -68,7 +68,7 @@ const Navbar = () => {
     <div className={classes.container}>
       <div className={classes.wrapper}>
         <Link to='/' className={classes.left}>
-          Real Estate <BsHouseDoor />
+          Apex House Rentals <BsHouseDoor />
         </Link>
         <ul className={classes.center}>
           <li className={classes.listItem}>Home</li>
@@ -98,13 +98,13 @@ const Navbar = () => {
             <div className={classes.listPropertyWrapper} onClick={(e) => e.stopPropagation()}>
               <h2>List Property</h2>
               <form onSubmit={handleListProperty}>
-                <input type="text" placeholder='Title...' name='title' onChange={handleState}/>
+              <input type="text" placeholder='Title...' name='title' onChange={handleState}/>
                 <input type="text" placeholder='Type...' name='type' onChange={handleState}/>
                 <input type="text" placeholder='Desc...' name='desc' onChange={handleState}/>
-                <input type="text" placeholder='Continent...' name='continent' onChange={handleState}/>
+                <input type="text" placeholder='Location...' name='location' onChange={handleState}/>
                 <input type="number" placeholder='Price...' name='price' onChange={handleState}/>
                 <input type="number" placeholder='Sq. meters...' name='sqmeters' onChange={handleState}/>
-                <input type="number" placeholder='Beds...' name='beds' step={1} min={2} onChange={handleState}/>
+                <input type="number" placeholder='Baths...' name='baths' step={1} min={2} onChange={handleState}/>
                 
                 <div style={{display: 'flex',alignItems: 'center',gap: '12px',width: '50%'}}>
                   <label htmlFor='photo'>Property picture <AiOutlineFileImage/> </label>
@@ -131,7 +131,7 @@ const Navbar = () => {
           {showMobileNav &&
           <div className={classes.navigation}>
         <Link to='/' className={classes.left}>
-          Real Estate <BsHouseDoor />
+          Apex House Rentals <BsHouseDoor />
         </Link>
         <AiOutlineClose onClick={() => setShowMobileNav(false)} className={classes.mobileCloseIcon}/>
         <ul className={classes.center}>
@@ -161,13 +161,13 @@ const Navbar = () => {
             <div className={classes.listPropertyWrapper} onClick={(e) => e.stopPropagation()}>
               <h2>List Property</h2>
               <form onSubmit={handleListProperty}>
-                <input type="text" placeholder='Title...' name='title' onChange={handleState}/>
+              <input type="text" placeholder='Title...' name='title' onChange={handleState}/>
                 <input type="text" placeholder='Type...' name='type' onChange={handleState}/>
                 <input type="text" placeholder='Desc...' name='desc' onChange={handleState}/>
-                <input type="text" placeholder='Continent...' name='continent' onChange={handleState}/>
+                <input type="text" placeholder='Location...' name='location' onChange={handleState}/>
                 <input type="number" placeholder='Price...' name='price' onChange={handleState}/>
                 <input type="number" placeholder='Sq. meters...' name='sqmeters' onChange={handleState}/>
-                <input type="number" placeholder='Beds...' name='beds' step={1} min={2} onChange={handleState}/>
+                <input type="number" placeholder='Baths...' name='baths' step={1} min={2} onChange={handleState}/>
                 
                 <div style={{display: 'flex',alignItems: 'center',gap: '12px',width: '50%'}}>
                   <label htmlFor='photo'>Property picture <AiOutlineFileImage/> </label>
