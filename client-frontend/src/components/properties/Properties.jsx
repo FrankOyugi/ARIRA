@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { request } from '../../util/fetchAPI'
 import { arrPriceRanges } from '../../util/idxToPriceRange'
 import person from '../../assets/person.jpg'
-import {FaBed, FaSquareFull} from 'react-icons/fa'
+import {FaBath, FaSquareFull} from 'react-icons/fa'
 import {AiOutlineSearch} from 'react-icons/ai'
 
 
@@ -106,6 +106,9 @@ const Properties = () => {
                   <option value="3">75,000-120,000</option>
                   <option value="4">120,000-500,000</option>
                  </select>
+                 <form action="" className={classes.searchBar}>
+                   <input type="text" placeholder="Enter Location..."/>
+                 </form>
                  <button className={classes.searchBtn}>
                    <AiOutlineSearch onClick={handleSearch} className={classes.searchIcon}/>
                  </button>
@@ -124,11 +127,11 @@ const Properties = () => {
                                 </Link>
                                 <div className={classes.details}>
                                     <div className={classes.priceAndOwner}>
-                                        <span className={classes.price}>$ {property.price}</span>
+                                        <span className={classes.price}>ksh {property.price}</span>
                                         <img src={person} className={classes.owner} alt=""/>
                                     </div>
                                     <div className={classes.moredetails}>
-                                        <span>{property.beds} <FaBed classname={classes.icon}/></span>
+                                        <span>{property.baths} <FaBath classname={classes.icon}/></span>
                                         <span>{property.sqmeters} <FaSquareFull classname={classes.icon}/></span>
                                     </div>
                                     <div className={classes.desc}>

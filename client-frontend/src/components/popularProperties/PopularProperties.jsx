@@ -32,7 +32,7 @@ const PopularProperties = () => {
           <h2>Best type of properties for you</h2>
         </div>
         <div className={classes.properties}>
-          <Link className={classes.property} to={`/properties?type=bedsitter`}>
+          <Link className={classes.property} to={`/properties?type=bedsitter&priceRange=0`}>
             <img src={img1} alt=""/>
             <div className={classes.quantity}>{numProperties?.bedsitter} properties</div>
             <h5>Bedsitter properties</h5>
