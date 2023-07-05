@@ -79,7 +79,7 @@
   margin-left: 10px;
 }
 
-::placeholder{
+.wrapper > .options >.searchBar > input::placeholder{
   color: #efefef;
   text-decoration: none;
   font-weight: normal;
