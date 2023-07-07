@@ -152,7 +152,7 @@
     scale: 1.035;
 }
 
-.properties .owner{
+.priceAndOwner .owner{
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -166,16 +166,16 @@
     padding: 0 0.5rem;
 }
 
-.property > .details > .priceAndOwner{
-    width: 80%;
+ .property > .details > .priceAndOwner{
+    width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
+ }
 
 .priceAndOwner > .price{
     font-weight: bold;
     font-size: 18px;
+    color: #000;
 }
 
 .moreDetails{
@@ -183,19 +183,16 @@
     align-items: center;
     gap: 1.25rem;
     margin-bottom: 0.5rem;
+    color: #000;
 }
 
 .moreDetails > span{
     display: flex;
     align-items: center;
     gap: 1rem;
-    border-right: 1px solid #0707b5;
     color: #2c2cdc;
 }
 
-.moreDetails > span:last-child{
-    border: none;
-}
 
 .title{
     overflow: hidden;

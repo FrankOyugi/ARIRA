@@ -175,6 +175,25 @@
     background-color: #fff;
 }
 
+.payment {
+    width: 25%;
+    text-align: center;
+    border: 1px solid transparent;
+    outline: none;
+    margin-top: 1.5rem;
+    padding: 0.4rem 1rem;
+    white-space: nowrap;
+    background-color: #2500ac;
+    color: #fff;
+    cursor: pointer;
+}
+
+.payment:hover {
+    border-color: #2500ac;
+    color: #2500ac;
+    background-color: #fff;
+}
+
 /* list property */
 
 .contactForm {

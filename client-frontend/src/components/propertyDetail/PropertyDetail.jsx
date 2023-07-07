@@ -66,7 +66,7 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
               <div>Location: <span>{`${propertyDetail?.location}`}</span></div>
             </div>
             <div className={classes.priceAndOwner}>
-              <span className={classes.price}><span>Price: ksh</span>{`${propertyDetail?.price}`}</span>
+              <span className={classes.price}><span>Price: ksh: </span>{`${propertyDetail?.price}`}</span>
               <span style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
                 Owner <img src={`http://localhost:3005/images/${propertyDetail?.currentOwner?.profileImg}`} className={classes.owner} alt=""/>
               </span>
@@ -81,6 +81,9 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
           </p>
           <button onClick={() => setShowForm(true)} className={classes.contactOwner}>
             Contact Owner
+          </button>
+          <button className={classes.payment}>
+           Make Payment
           </button>
         </div>
       </div>
