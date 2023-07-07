@@ -6,6 +6,7 @@ import { arrPriceRanges } from '../../util/idxToPriceRange'
 import person from '../../assets/person.jpg'
 import {FaBath, FaSquareFull} from 'react-icons/fa'
 import {AiOutlineSearch} from 'react-icons/ai'
+import img1 from '../../assets/house.png'
 
 
 const Properties = () => {
@@ -66,6 +67,7 @@ const Properties = () => {
       const filteredProperties = allProperties.filter((property) => {
         //options.priceRange === 1 arrPriceRanges[1] =>second element => "10000-40000"
         const priceRange = arrPriceRanges[options.priceRange]
+        if(priceRange) {
         const minPrice  = Number(priceRange.split('-')[0])
         const maxPrice  = Number(priceRange.split('-')[1])
         
@@ -75,11 +77,12 @@ const Properties = () => {
             && property.price >= minPrice && property.price <= maxPrice
         ) {
             return property
+          }
+        } else {
+          console.log("no price range")
         }
-
-      })
-
-      const queryStr = `type=${options.type}&priceRange=${options.priceRange}`
+      });
+      const queryStr = `type=${options.type}`
 
       navigate(`/properties?${queryStr}`, {replace: true})
       setFilteredProperties(filteredProperties)
@@ -134,8 +137,8 @@ const Properties = () => {
                                         <span>{property.baths} <FaBath classname={classes.icon}/></span>
                                         <span>{property.sqmeters} <FaSquareFull classname={classes.icon}/></span>
                                     </div>
-                                    <div className={classes.desc}>
-                                        {property.desc}
+                                    <div className={classes.title}>
+                                        {property.title}
                                     </div>
                                 </div>
                             </div>

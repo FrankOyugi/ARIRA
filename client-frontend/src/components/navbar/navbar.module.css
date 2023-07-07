@@ -135,9 +135,13 @@
     color: #000;
 }
 
-.listPropertyWrapper >button{
+.listPropertyWrapper >form>div>{
+    margin-bottom: 0;
+}
+
+.listPropertyWrapper >form >button{
     margin-bottom: 50px;
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
 .removeIcon{

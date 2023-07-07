@@ -197,7 +197,7 @@
     border: none;
 }
 
-.desc{
+.title{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

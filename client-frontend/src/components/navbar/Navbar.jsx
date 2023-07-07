@@ -35,33 +35,66 @@ const Navbar = () => {
     setState({})
   }
 
-  const handleListProperty = async(e) => {
-    e.preventDefault()
-
-    let filename = null
-    if(photo){
-      const formData = new FormData()
-      filename = crypto.randomUUID() + photo.name
-      formData.append("filename", filename)
-      formData.append("image", photo)
-
-      await request('/upload/image', "POST", {}, formData, true)
-    } else {
-      return
-    }
-
+  const handleListProperty = async (e) => {
+    e.preventDefault();
+  
     try {
-      const options = {
-        'Authorization': `Bearer${token}`,
-        'Content-Type': 'application/json'
+      let filename = null;
+      if (!photo) {
+        return;
       }
-
-      await request('/property', 'POST', options, {...state, img: filename})
-      handleCloseForm()
+  
+      const formData = new FormData();
+      filename = crypto.randomUUID() + photo.name;
+      formData.append("filename", filename);
+      formData.append("image", photo);
+  
+      const imageUploadPromise = request('/upload/image', "POST", {}, formData, true);
+      const propertyCreatePromise = request('/property', 'POST', {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }, { ...state, img: filename }, false);
+  
+      await Promise.all([imageUploadPromise, propertyCreatePromise]);
+      handleCloseForm();
     } catch (error) {
-      console.error(error)
+      if (error.name === "AbortError") {
+        console.log("Request aborted");
+      } else {
+        console.error("Error:", error.message);
+      }
     }
-  }
+  };
+
+  // const handleListProperty = async(e) => {
+  //   e.preventDefault()
+    
+  //   try {
+  //     let filename = null
+  //     if(photo){
+  //       const formData = new FormData()
+  //       filename = crypto.randomUUID() + photo.name
+  //       formData.append("filename", filename)
+  //       formData.append("image", photo)
+        
+  //       console.log('runs 1')
+  //       await request('/upload/image', 'POST', {}, formData, true)
+  //       console.log('runs 3')
+  //     } else {
+  //       return
+  //     }
+      
+  //       const options = {
+  //         'Authorization': `Bearer${token}`,
+  //         'Content-Type': 'application/json'
+  //       };
+
+  //       await request('/property', 'POST', options, {...state, img: filename},false);
+  //       handleCloseForm();
+  //     } catch (error) {
+  //       console.error(error);
+  //     }
+  // };
   
 
   return (
@@ -116,7 +149,7 @@ const Navbar = () => {
                       />
                       {photo && <p>{photo.name}</p>}
                 </div>
-                <button>List Property</button>
+                <button type='submit'>List Property</button>
                 <AiOutlineClose onClick={handleCloseForm} className={classes.removeIcon}/>
                 
               </form>
@@ -179,7 +212,7 @@ const Navbar = () => {
                       />
                       {photo && <p>{photo.name}</p>}
                 </div>
-                <button>List Property</button>
+                <button type='submit'>List Property</button>
                 <AiOutlineClose onClick={handleCloseForm} className={classes.removeIcon}/>
                 
               </form>

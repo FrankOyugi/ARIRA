@@ -44,7 +44,7 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
     e.preventDefault()
 
     //to send email logic
-  emailjs.sendFrom(serviceId, templateId, formRef.current, publicKey)
+  emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
   .then((result) => console.log(result))
   .catch((err) => console.log(err))
 
@@ -77,7 +77,7 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
             </div>
           </div>
           <p className={classes.desc}>
-            Desc: <span>{`${propertyDetail?.desc}`}</span>
+            Description: <span>{`${propertyDetail?.desc}`}</span>
           </p>
           <button onClick={() => setShowForm(true)} className={classes.contactOwner}>
             Contact Owner
