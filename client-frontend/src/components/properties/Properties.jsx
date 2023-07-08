@@ -6,7 +6,7 @@ import { arrPriceRanges } from '../../util/idxToPriceRange'
 import person from '../../assets/person.jpg'
 import {FaBath, FaSquareFull} from 'react-icons/fa'
 import {AiOutlineSearch} from 'react-icons/ai'
-import estate5 from '../../assets/estate5.jpg'
+
 
 
 const Properties = () => {
@@ -125,22 +125,22 @@ const Properties = () => {
                     <div className={classes.properties}>
                         {filteredProperties.map((property) => (
                             <div key={property._id} className={classes.property}>
-                                <Link classname={classes.imgContainer} to={`/propertyDetail/${property._id}`}>
+                                <Link className={classes.imgContainer} to={`/propertyDetail/${property._id}`}>
                                     <img src={`http://localhost:3005/images/${property?.img}`} alt =""/>
                                 </Link>
-                                <Link classname={classes.details} to={`/propertyDetail/${property._id}`}>
+                                <div className={classes.details} to={`/propertyDetail/${property._id}`}>
                                     <div className={classes.priceAndOwner}>
                                         <span className={classes.price}>ksh {property.price}</span>
                                         <img src={person} className={classes.owner} alt=""/>
                                     </div>
                                     <div className={classes.moreDetails}>
-                                        <span>{property.baths} <FaBath classname={classes.icon}/></span>
-                                        <span>{property.sqmeters} <FaSquareFull classname={classes.icon}/></span>
+                                        <span>{property.baths} <FaBath className={classes.icon}/></span>
+                                        <span>{property.sqmeters} <FaSquareFull className={classes.icon}/></span>
                                     </div>
                                     <div className={classes.title}>
                                         {property.title}
                                     </div>
-                                </Link>
+                                </div>
                             </div>
                         ))}
                     </div>

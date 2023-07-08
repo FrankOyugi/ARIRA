@@ -25,7 +25,7 @@ propertyController.get('/find/featured', async (req, res) => {
 //get all from a specific type
 propertyController.get('/find', async (req, res) => {
         const type = req.query
-        // {type: 'beach'}
+        // {type: 'bedsitter'}
       try {
         if(type){
             const properties = await Property.find(type).populate('currentOwner', '-password')
@@ -37,7 +37,7 @@ propertyController.get('/find', async (req, res) => {
         return res.status(500).json(error.message)
     }
 })
-// get counts of types e.g beach-2,mountain-5,village-10
+// get counts of types e.g bedsitters=2,threebedrooms=5
 propertyController.get('/find/types', async(req, res) => {
     try {
         const bedsitterType = await Property.countDocuments({type: 'bedsitter'})

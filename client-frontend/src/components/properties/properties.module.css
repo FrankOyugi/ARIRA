@@ -129,13 +129,13 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 2rem;
 }
 
 .properties > .property > .imgContainer{
     display: inline-block;
     height: 350px;
-    width: 80%;
+    width: 100%;
     margin-bottom: 0.5rem;
     overflow: hidden;
     cursor: pointer;
@@ -152,7 +152,7 @@
     scale: 1.035;
 }
 
-.priceAndOwner .owner{
+.properties .owner{
     height: 35px;
     width: 35px;
     border-radius: 50%;
@@ -167,9 +167,10 @@
 }
 
  .property > .details > .priceAndOwner{
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
  }
 
 .priceAndOwner > .price{

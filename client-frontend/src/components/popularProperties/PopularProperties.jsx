@@ -52,7 +52,7 @@ const PopularProperties = () => {
             <div className={classes.quantity}>{numProperties?.threebedroom} properties</div>
             <h5>Three bedroom properties</h5>
           </Link>
-          <Link className={classes.property} to={`/properties?type=fourbedroom`}>
+          <Link className={classes.property} to={`/properties?type=fourbedroom & {priceRange=3 || priceRange=4}`}>
             <img src={img5} alt=""/>
             <div className={classes.quantity}>{numProperties?.fourbedroom} properties</div>
             <h5>Four bedroom properties</h5>

@@ -46,8 +46,8 @@ const FeaturedProperties = () => {
                          <span>{property?.baths} baths <FaBath className={classes.icon}/></span>
                          <span>{property?.location} <FaMapMarkerAlt className={classes.icon}/></span>
                        </div>
-                       <div className={classes.desc}>
-                        {property?.desc}
+                       <div className={classes.title}>
+                        {property?.title}
                        </div>
                   </div>
               </div>
