@@ -10,6 +10,9 @@ import Signin from './components/signin/Signin';
 import Properties from './components/properties/Properties';
 import PropertyDetail from './components/propertyDetail/PropertyDetail';
 import Footer from './components/footer/Footer';
+import Fourbeds from './components/fourbeds/Fourbeds'
+
+
 
 
 function App() {
@@ -32,6 +35,13 @@ function App() {
         <>
         <Navbar />
         <Properties />
+        <Footer />
+        </>} />
+
+        <Route path='/fourbeds' element={
+        <>
+        <Navbar />
+        <Fourbeds/>
         <Footer />
         </>} />
 
