@@ -74,6 +74,12 @@ propertyController.get("/find/:id", async (req, res) => {
     }
 })
 
+//get user properties
+propertyController.get("/find/userproperties",async (req,res) => {
+    const userId = req.userId;
+    const Userproperties = properties.filter(property => property.userId === userId);
+    res.json({ properties: Userproperties });
+});
 
 //create (jsonwebtoken)
 propertyController.post('/', verifyToken, async (req, res) => {
@@ -122,5 +128,6 @@ propertyController.delete("/:id", verifyToken, async (req, res) => {
         return res.status(500).json(error.message)
     }
 })
+
 
 module.exports = propertyController

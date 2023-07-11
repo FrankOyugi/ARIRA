@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom'
 import { AiOutlineClose } from 'react-icons/ai'
 import { FaBath, FaSquareFull } from 'react-icons/fa'
 import emailjs from '@emailjs/browser'
+// import MpesaPay from 'mpesapay'
 
 
 const PropertyDetail = () => {
@@ -20,7 +21,42 @@ const PropertyDetail = () => {
 const serviceId = process.env.REACT_APP_SERVICE_ID
 const templateId = process.env.REACT_APP_TEMPLATE_ID
 const publicKey = process.env.REACT_APP_PUBLIC_KEY
+// const Consumer_Key = process.env.REACT_APP_MPESA_CONSUMER_KEY
+// const Consumer_Secret = process.env.REACT_APP_MPESA_CONSUMER_SECRET
+// const Business_Short_code = process.env.REACT_APP_MPESA_BUSINESS_SHORT_CODE
+// const Passkey = process.env.REACT_APP_MPESA_PASS_KEY
+// const PartyA = process.env.REACT_APP_MPESA_PARTYA
+// const B2C_Security_Credential = process.env.REACT_APP_MPESA_B2C_SECURITY_CREDENTIAL
+// const Initiator_Name = process.env.REACT_APP_MPESA_INITIATOR_NAME
+// const Environment = 'sandbox | live'
 
+
+// const mpesapay = new Mpesapay(
+//   Consumer_Key,
+//   Consumer_Secret,
+//   Business_Short_code,
+//   Passkey,
+//   PartyA,
+//   B2C_Security_Credential,
+//   Initiator_Name,
+//   Environment
+// );
+//   async function initiatePayment(amount, phoneNumber, callbackUrl) {
+//     try {
+//       const response = await mpesapay.stkPush(amount, phoneNumber, callbackUrl);
+//       console.log(response)
+//       //Handle response data
+//     } catch (error) {
+//       console.error(error);
+//       //Handle errors
+//     }
+//   }
+
+//   //Call the function to initiate a payment
+//   const amount = '10';
+//   const phoneNumber = '254700513468';
+//   const callbackUrl = 'https';
+//   initiatePayment(amount, phoneNumber, callbackurl);
 
   useEffect(() => {
      const fetchDetails = async() => {

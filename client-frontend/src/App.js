@@ -10,7 +10,8 @@ import Signin from './components/signin/Signin';
 import Properties from './components/properties/Properties';
 import PropertyDetail from './components/propertyDetail/PropertyDetail';
 import Footer from './components/footer/Footer';
-import Fourbeds from './components/fourbeds/Fourbeds'
+import Fourbeds from './components/fourbeds/Fourbeds';
+import Manage from './components/manage/Manage'
 
 
 
@@ -44,6 +45,13 @@ function App() {
         <Fourbeds/>
         <Footer />
         </>} />
+
+        <Route path='/manage' element={
+        <>
+        <Navbar />
+        <Manage />
+        <Footer />
+        </> } />
 
         <Route path='/propertyDetail/:id' element={
         <>

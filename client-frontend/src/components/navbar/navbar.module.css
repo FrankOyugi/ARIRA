@@ -94,6 +94,21 @@
     background-color: #340bc8;
 }
 
+.center > .manager{
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    background-color: #2500cc;
+    color: #fff;
+    border-radius: 12px;
+    transition: 150ms all;
+    cursor: pointer;
+}
+
+.center >.manager:hover{
+    color: #efefef;
+    background-color: #340bc8;
+}
+
 .listPropertyForm{
     position: absolute;
     top: 0;
