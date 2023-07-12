@@ -11,7 +11,7 @@ const Manage = () => {
 }, [])
 const fetchUserProperties = async () => {
     try {
-        const response = await request('/property/find/userproperties', 'GET')
+        const response = await request(`/property/find/userproperties`, 'GET')
     
     if(response.ok) {
         const data = await response.json()
