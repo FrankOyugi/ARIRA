@@ -1,5 +1,3 @@
-
-
 const paymentController = require('express').Router()
 
 paymentController.get("/pay/:pn/:amount", async (req, res, next) => {
