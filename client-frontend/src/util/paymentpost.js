@@ -1,7 +1,7 @@
 const sendPayment = async (pn, amount) => {
     try {
-      const response = await fetch('http://localhost:3005/pay/:pn/:amount', {
-        method: 'POST',
+      const response = await fetch(`http://localhost:3005/pay/${pn}/${amount}`, {
+        method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
