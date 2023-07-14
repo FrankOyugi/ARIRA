@@ -22,7 +22,7 @@ module.exports.tokenController = async (req, res, next) => {
   const transcation_type = "CustomerPayBillOnline";
   const amount = req.amount;
   const phoneNumber = req.pn;
-  const callBackUrl = "https://d630-102-140-206-115.ngrok-free.app/daraja";
+  const callBackUrl = "https://20ad-105-161-197-198.ngrok-free.app/daraja";
   const accountReference = "lipa-na-mpesa-tutorial";
   const transaction_desc = "Testing lipa na mpesa functionality";
 

@@ -104,19 +104,10 @@ const Navbar = () => {
           Apex House Rentals <BsHouseDoor />
         </Link>
         <ul className={classes.center}>
-          {
-          !user ?
-          <>
             <li className={classes.listItem}>Home</li>
             <li className={classes.listItem}>About</li>
             <li className={classes.listItem}>Featured</li>
             <li className={classes.listItem}>Contacts</li>
-          </>
-          :
-          <>
-            <Link to='/manage' className={classes.manager}>Manage your Property</Link>
-          </>
-          }
         </ul>
         <div className={classes.right}>
               {

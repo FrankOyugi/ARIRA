@@ -13,7 +13,7 @@ const Footer = () => {
           <h2>Contacts</h2>
           <span>Phone: +254700123123</span>
           <span>Youtube: Apex House Rentals</span>
-          <span>Twitter: Apex House Rentals</span>
+          <span>Email: foyugi2001@gmail.com</span>
         </div>
         <div className={classes.col}>
           <h2>Location</h2>

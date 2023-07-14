@@ -53,7 +53,7 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
 
   }
 
-  const handleButtonClick = () => {
+  const handleButtonClick = async () => {
     const pnInput = prompt('Please enter your phone number:');
     if (pnInput !== null) {
       setPN(pnInput);
@@ -64,7 +64,7 @@ const publicKey = process.env.REACT_APP_PUBLIC_KEY
       
       }
     }
-    sendPayment(pnInput, amount)
+    await sendPayment(pnInput, amount)
           .then(() => {
             console.log('Payment sent successfully!');
           })

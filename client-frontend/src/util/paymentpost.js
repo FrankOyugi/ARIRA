@@ -5,7 +5,6 @@ const sendPayment = async (pn, amount) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ pn, amount }),
       });
   
       if (response.ok) {
