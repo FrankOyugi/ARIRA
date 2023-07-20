@@ -109,9 +109,6 @@ const Properties = () => {
                   <option value="3">75,000-120,000</option>
                   <option value="4">120,000-500,000</option>
                  </select>
-                 <form action="" className={classes.searchBar}>
-                   <input type="text" placeholder="Enter Location..."/>
-                 </form>
                  <button className={classes.searchBtn}>
                    <AiOutlineSearch onClick={handleSearch} className={classes.searchIcon}/>
                  </button>
